@@ -18,7 +18,19 @@ export default class App extends Component {
       <div className="App">
         <h1>Hello CodeSandbox</h1>
         <h2>Start editing to see some magic happen!</h2>
-        <input value={this.state.color} />
+        {/* <input type="color" name="color" value={this.state.color} /> */}
+        {this.state.color ? (
+          <input
+            style={{ width: "136px", height: "47px" }}
+            type="color"
+            name="color"
+            value={this.state.color}
+            disabled
+          />
+        ) : (
+          ""
+        )}
+
         <InputColor
           name="color"
           initialHexColor={this.state.color}
